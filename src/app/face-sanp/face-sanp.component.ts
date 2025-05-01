@@ -20,33 +20,20 @@ export class FaceSanpComponent implements OnInit {
 
 
     ngOnInit() {
-    this.title = 'Archibald';
-    this.description = 'Mon meilleur ami depuis toujours !';
-    this.createdAt = new Date();
-    this.snaps = 5;
-    this.imageUrl = 'https://cdn.pixabay.com/photo/2015/05/31/16/03/teddy-bear-792273_1280.jpg';
     this.snapButtonText = 'Oh Snap !';
     this.userHasSnapped = false
   }
-
-  onSnap():void{
-    if(this.userHasSnapped){
-     this.unSnap();
-    } else{
-      this.snap();
-    }
-  }
-
-  snap(){
-    this.snapButtonText = 'Oops unSnap';
-    this.snaps++;
-    this.userHasSnapped = true;
-  }
-
-  unSnap(){
-    this.snaps--;
-    this.snapButtonText = 'Oh Snap';
+  unSnap() {
+    this.faceSnap.removeSnap();
+    this.snapButtonText = 'Oh Snap!';
     this.userHasSnapped = false;
   }
+
+snap() {
+    this.faceSnap.addSnap();
+    this.snapButtonText = 'Oops, unSnap!';
+    this.userHasSnapped = true;
+}
+
 }
 
