@@ -3,5 +3,7 @@
     <img [src]="imageUrl" [alt]="title">
     <p>{{ description }}</p>
     <p>FaceSnap créée le {{ createdAt }}</p>
-    <p>🤌 {{ snaps }}</p>
+    <p>
+      <button (click)="onAddSnap()"> Oh Snap</button>
+      {{ snaps }}</p>
   </div>
